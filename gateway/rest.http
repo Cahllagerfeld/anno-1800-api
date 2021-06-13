@@ -1,0 +1,10 @@
+POST   http://localhost:3000/needs/de/calculate
+Content-Type: application/json
+
+{
+"Farmer":2312
+}
+
+###
+
+GET http://localhost:3000/needs/de/metadata

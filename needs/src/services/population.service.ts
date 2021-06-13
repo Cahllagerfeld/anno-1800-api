@@ -28,14 +28,8 @@ export class PopulationService {
 
   public getKeys() {
     const mappedValues = this.populations.map((population: PopulationLevel) => {
-      return { key: population.name, guid: population.guid };
+      return population.name;
     });
-
-    const reducedObject = mappedValues.reduce(
-      (obj, item) => Object.assign(obj, { [item.key]: item.guid }),
-      {},
-    );
-
-    return reducedObject;
+    return Object.values(mappedValues);
   }
 }

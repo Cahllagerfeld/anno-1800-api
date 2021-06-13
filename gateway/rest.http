@@ -2,9 +2,11 @@ POST   http://localhost:3000/needs/de/calculate
 Content-Type: application/json
 
 {
-"Farmer":2312
+"Farmers":2312,
+"Workers": 432,
+"Explorers":321
 }
 
 ###
 
-GET http://localhost:3000/needs/de/metadata
+GET http://localhost:3000/needs/metadata

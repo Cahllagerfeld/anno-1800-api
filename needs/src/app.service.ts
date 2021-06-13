@@ -11,6 +11,7 @@ export interface TotalNeed {
 }
 
 export interface FactorySet {
+  guid: number;
   amount: number;
   productivity: number;
   totalTpMin: number;
@@ -80,6 +81,7 @@ export class AppService {
           needSet.tpmin,
         );
         const newFactorySet: FactorySet = {
+          guid: factory.guid,
           amount: factoryAmount,
           productivity: productivity,
           totalTpMin: needSet.tpmin,

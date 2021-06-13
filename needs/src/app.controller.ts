@@ -12,14 +12,17 @@ export class AppController {
 
   @MessagePattern({ message: 'calculate' })
   calculate(@Payload() payload: { [name: string]: number }) {
-    // return this.appService.calculateFactories(payload);
-    const a = this.appService.calculateNeeds(payload);
-    const b = a.map((el) => this.appService.calculateFactorySet(el));
-    return b;
+    const populationNeeds = this.appService.calculateNeeds(payload);
+    console.log(populationNeeds);
+    const factorySets = populationNeeds.map((el) =>
+      this.appService.calculateFactorySet(el),
+    );
+    return factorySets;
   }
 
   @MessagePattern({ message: 'metadata' })
   getMetadata() {
-    return this.populationService.getKeys();
+    const names = this.populationService.getKeys();
+    return { populationLevels: names };
   }
 }

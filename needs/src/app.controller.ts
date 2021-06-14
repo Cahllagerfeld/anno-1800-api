@@ -13,7 +13,6 @@ export class AppController {
   @MessagePattern({ message: 'calculate' })
   calculate(@Payload() payload: { [name: string]: number }) {
     const populationNeeds = this.appService.calculateNeeds(payload);
-    console.log(populationNeeds);
     const factorySets = populationNeeds.map((el) =>
       this.appService.calculateFactorySet(el),
     );
@@ -21,8 +20,10 @@ export class AppController {
   }
 
   @MessagePattern({ message: 'optimize' })
-  optimize(@Payload() payload: FactorySet) {
-    return this.appService.optimizeFactorySet(payload);
+  optimize(@Payload() payload: { data: FactorySet[] }) {
+    return payload.data.map((set: FactorySet) => {
+      return this.appService.optimizeFactorySet(set);
+    });
   }
 
   @MessagePattern({ message: 'metadata' })

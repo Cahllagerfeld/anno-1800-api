@@ -2,7 +2,7 @@ POST   http://localhost:3000/needs/de/calculate
 Content-Type: application/json
 
 {
-"Shepherds":250
+"Shepherds":2
 }
 
 ###
@@ -11,10 +11,14 @@ POST http://localhost:3000/needs/de/optimize
 Content-Type: application/json
 
 {
-    "guid": 114444,
-    "amount": 1,
-    "productivity": 1,
-    "totalTpMin": 0.525
+  "data": [
+    {
+      "guid": 114456,
+      "amount": 1,
+      "productivity": 1,
+      "totalTpMin": 0.006
+    }
+  ]
 }
 
 ###

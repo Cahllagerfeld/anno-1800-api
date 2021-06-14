@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
-import { AppService } from './app.service';
+import { AppService, FactorySet } from './app.service';
 import { PopulationService } from './services/population.service';
 
 @Controller()
@@ -18,6 +18,11 @@ export class AppController {
       this.appService.calculateFactorySet(el),
     );
     return factorySets;
+  }
+
+  @MessagePattern({ message: 'optimize' })
+  optimize(@Payload() payload: FactorySet) {
+    return this.appService.optimizeFactorySet(payload);
   }
 
   @MessagePattern({ message: 'metadata' })

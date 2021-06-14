@@ -13,7 +13,12 @@ export class NeedsController {
     return this.needsService.send({ message: 'calculate' }, body);
   }
 
-  @Get('/metadata')
+  @Post(':lang/optimize')
+  optimizeFactorySet(@Body() body) {
+    return this.needsService.send({ message: 'optimize' }, body);
+  }
+
+  @Get('/metadata/populations')
   getMetadata(@Param('lang') lang: string) {
     return this.needsService.send({ message: 'metadata' }, {});
   }

@@ -2,11 +2,21 @@ POST   http://localhost:3000/needs/de/calculate
 Content-Type: application/json
 
 {
-"Farmers":2312,
-"Workers": 432,
-"Explorers":321
+"Shepherds":250
 }
 
 ###
 
-GET http://localhost:3000/needs/metadata
+POST http://localhost:3000/needs/de/optimize
+Content-Type: application/json
+
+{
+    "guid": 114444,
+    "amount": 1,
+    "productivity": 1,
+    "totalTpMin": 0.525
+}
+
+###
+
+GET http://localhost:3000/needs/metadata/populations

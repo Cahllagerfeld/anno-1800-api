@@ -54,7 +54,6 @@ export class AppService {
         }
       });
     });
-    console.log(totalNeeds);
     return totalNeeds;
   }
 
@@ -64,6 +63,14 @@ export class AppService {
     totalTpmin: number,
   ): number {
     return Math.ceil(totalTpmin / productivity / factoryTpmin);
+  }
+
+  private getProductivityByAmount(
+    amount: number,
+    factoryTpmin: number,
+    totalTpMin: number,
+  ): number {
+    return totalTpMin / factoryTpmin / amount;
   }
 
   public calculateFactorySet(needSet: TotalNeed, preFactorySet?: FactorySet) {
@@ -90,5 +97,20 @@ export class AppService {
       });
     }
     return nextFactorySet;
+  }
+
+  public optimizeFactorySet(preFactorySet: FactorySet): FactorySet {
+    const factory = this.factoryService.findById(preFactorySet.guid);
+    const optimizedProductivity = this.getProductivityByAmount(
+      preFactorySet.amount,
+      factory.tpmin,
+      preFactorySet.totalTpMin,
+    );
+    return {
+      guid: preFactorySet.guid,
+      amount: preFactorySet.amount,
+      productivity: optimizedProductivity,
+      totalTpMin: preFactorySet.totalTpMin,
+    };
   }
 }

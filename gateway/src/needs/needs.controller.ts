@@ -31,7 +31,7 @@ export class NeedsController {
   }
 
   @Get('/metadata/populations')
-  getMetadata(@Param('lang') lang: string) {
+  getMetadata() {
     return this.needsService.send({ message: 'metadata' }, {});
   }
 }

@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { Anno1800Controller } from './Anno1800.controller';
 
-describe('NeedsController', () => {
+describe('Anno1800Controller', () => {
   let controller: Anno1800Controller;
 
   beforeEach(async () => {

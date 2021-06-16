@@ -2,7 +2,7 @@ import { ClientsModuleOptions, Transport } from '@nestjs/microservices';
 
 export const clients: ClientsModuleOptions = [
   {
-    name: 'NEEDS_SERVICE',
+    name: 'ANNO1800_SERVICE',
     transport: Transport.REDIS,
     options: {
       url: 'redis://localhost:6379',

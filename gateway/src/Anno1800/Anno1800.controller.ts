@@ -2,11 +2,11 @@ import { Body, Controller, Get, Inject, Param, Post } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { ApiParam, ApiTags } from '@nestjs/swagger';
 
-@Controller('needs')
-@ApiTags('Needs')
-export class NeedsController {
+@Controller('anno1800')
+@ApiTags('Anno 1800')
+export class Anno1800Controller {
   constructor(
-    @Inject('NEEDS_SERVICE') private readonly needsService: ClientProxy,
+    @Inject('ANNO1800_SERVICE') private readonly needsService: ClientProxy,
   ) {}
 
   @Post(':lang/calculate')

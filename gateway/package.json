@@ -26,6 +26,7 @@
     "@nestjs/microservices": "^7.6.17",
     "@nestjs/platform-express": "^7.6.15",
     "@nestjs/swagger": "^4.8.0",
+    "nest-router": "^1.0.9",
     "redis": "^3.1.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",

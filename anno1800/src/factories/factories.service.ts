@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { Factory } from '../interfaces/factory.interface';
 import data from '../data/annoData';
-import { FactorySet } from '../app.service';
 
 @Injectable()
-export class FactoryService {
+export class FactoriesService {
   private factories: Factory[];
   constructor() {
     this.factories = data.factories as Factory[];

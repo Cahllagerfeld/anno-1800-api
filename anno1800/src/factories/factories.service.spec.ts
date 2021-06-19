@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { FactoryService } from './factory.service';
+import { FactoriesService } from './factories.service';
 
 describe('FactoryService', () => {
-  let service: FactoryService;
+  let service: FactoriesService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [FactoryService],
+      providers: [FactoriesService],
     }).compile();
 
-    service = module.get<FactoryService>(FactoryService);
+    service = module.get<FactoriesService>(FactoriesService);
   });
 
   it('should be defined', () => {

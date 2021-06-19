@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { FactorySet, TotalNeed } from '../interfaces/commons.interface';
 import { Need, PopulationLevel } from '../interfaces/population.interface';
-import { FactoryService } from './factory.service';
-import { PopulationService } from './population.service';
-import { ProductsService } from './products.service';
+import { FactoriesService } from '../factories/factories.service';
+import { PopulationService } from '../services/population.service';
+import { ProductsService } from '../services/products.service';
 
 @Injectable()
 export class OperationsService {
   constructor(
     private readonly populationService: PopulationService,
     private readonly productService: ProductsService,
-    private readonly factoryService: FactoryService,
+    private readonly factoryService: FactoriesService,
   ) {}
 
   public calculateNeeds(populationAmounts: {

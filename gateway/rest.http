@@ -1,4 +1,4 @@
-POST   http://localhost:3000/anno1800/de/calculate
+POST   http://localhost:3000/v1/anno1800/operations/calculate
 Content-Type: application/json
 
 {
@@ -7,7 +7,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/anno1800/de/optimize
+POST http://localhost:3000/v1/anno1800/operations/optimize
 Content-Type: application/json
 
 {
@@ -20,7 +20,3 @@ Content-Type: application/json
     }
   ]
 }
-
-###
-
-GET http://localhost:3000/anno1800/metadata/populations

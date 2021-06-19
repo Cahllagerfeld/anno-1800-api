@@ -3,7 +3,7 @@ import data from '../data/annoData';
 import { PopulationLevel } from '../interfaces/population.interface';
 
 @Injectable()
-export class PopulationService {
+export class PopulationsService {
   private populations: PopulationLevel[];
   constructor() {
     this.populations = data.populationLevels as PopulationLevel[];

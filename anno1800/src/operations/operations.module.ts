@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { FactoriesService } from '../factories/factories.service';
-import { PopulationService } from '../services/population.service';
-import { ProductsService } from '../services/products.service';
+import { PopulationsService } from '../populations/populations.service';
+import { ProductsService } from '../products/products.service';
 import { OperationsController } from './operations.controller';
 import { OperationsService } from './operations.service';
 
@@ -9,7 +9,7 @@ import { OperationsService } from './operations.service';
   controllers: [OperationsController],
   providers: [
     OperationsService,
-    PopulationService,
+    PopulationsService,
     ProductsService,
     FactoriesService,
   ],

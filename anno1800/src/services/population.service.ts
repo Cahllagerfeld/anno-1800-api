@@ -25,11 +25,4 @@ export class PopulationService {
       (populationLevel: PopulationLevel) => populationLevel.name === name,
     );
   }
-
-  public getKeys() {
-    const mappedValues = this.populations.map((population: PopulationLevel) => {
-      return population.name;
-    });
-    return Object.values(mappedValues);
-  }
 }

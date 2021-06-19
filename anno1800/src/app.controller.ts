@@ -1,20 +1,16 @@
 import { Controller } from '@nestjs/common';
 import { MessagePattern, Payload } from '@nestjs/microservices';
-import { AppService, FactorySet } from './app.service';
-import { PopulationService } from './services/population.service';
-
+import { FactorySet } from './interfaces/commons.interface';
+import { OperationsService } from './services/operations.service';
 @Controller()
 export class AppController {
-  constructor(
-    private readonly appService: AppService,
-    private readonly populationService: PopulationService,
-  ) {}
+  constructor(private readonly operationsService: OperationsService) {}
 
   @MessagePattern({ message: 'calculate' })
   calculate(@Payload() payload: { [name: string]: number }) {
-    const populationNeeds = this.appService.calculateNeeds(payload);
+    const populationNeeds = this.operationsService.calculateNeeds(payload);
     const factorySets = populationNeeds.map((el) =>
-      this.appService.calculateFactorySet(el),
+      this.operationsService.calculateFactorySet(el),
     );
     return factorySets;
   }
@@ -22,13 +18,7 @@ export class AppController {
   @MessagePattern({ message: 'optimize' })
   optimize(@Payload() payload: { data: FactorySet[] }) {
     return payload.data.map((set: FactorySet) => {
-      return this.appService.optimizeFactorySet(set);
+      return this.operationsService.optimizeFactorySet(set);
     });
-  }
-
-  @MessagePattern({ message: 'metadata' })
-  getMetadata() {
-    const names = this.populationService.getKeys();
-    return { populationLevels: names };
   }
 }

@@ -20,3 +20,15 @@ export interface CommonObject {
   locaText: LocaText;
   name: string;
 }
+
+export interface TotalNeed {
+  guid: number;
+  tpmin: number;
+}
+
+export interface FactorySet {
+  guid: number;
+  amount: number;
+  productivity: number;
+  totalTpMin: number;
+}

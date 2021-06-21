@@ -3,7 +3,7 @@ import data from '../data/annoData';
 import { PopulationLevel } from '../interfaces/population.interface';
 
 @Injectable()
-export class PopulationService {
+export class PopulationsService {
   private populations: PopulationLevel[];
   constructor() {
     this.populations = data.populationLevels as PopulationLevel[];
@@ -24,12 +24,5 @@ export class PopulationService {
     return this.populations.find(
       (populationLevel: PopulationLevel) => populationLevel.name === name,
     );
-  }
-
-  public getKeys() {
-    const mappedValues = this.populations.map((population: PopulationLevel) => {
-      return population.name;
-    });
-    return Object.values(mappedValues);
   }
 }

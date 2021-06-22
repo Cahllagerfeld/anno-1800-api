@@ -7,3 +7,11 @@ export const Anno1800Client: ClientProviderOptions = {
     url: process.env.REDIS_URL,
   },
 };
+
+export const MappingClient: ClientProviderOptions = {
+  name: 'MAPPING_SERVICE',
+  transport: Transport.REDIS,
+  options: {
+    url: process.env.REDIS_URL,
+  },
+};

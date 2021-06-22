@@ -15,6 +15,7 @@ import { OperationsModule } from './Anno1800/operations/operations.module';
 import { PopulationsModule } from './Anno1800/populations/populations.module';
 import { ProductsModule } from './Anno1800/products/products.module';
 import { LanguageMiddleware } from './Anno1800/middleware/language. middleware';
+import { ConfigModule } from '@nestjs/config';
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
 ];
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
     ClientsModule.register([Anno1800Client]),
     RouterModule.forRoutes(routes),
     Anno1800Module,

@@ -1,0 +1,19 @@
+{
+  "name": "anno-1800-api",
+  "version": "1.0.0",
+  "description": "API based on Microservices providing core features for building an Frontend-Application for the Game Anno 1800",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cahllagerfeld/anno-1800-api.git"
+  },
+  "author": "Cahllagerfeld",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cahllagerfeld/anno-1800-api/issues"
+  },
+  "homepage": "https://github.com/Cahllagerfeld/anno-1800-api#readme"
+}

@@ -1,0 +1,17 @@
+tasks:
+  - init: docker pull redis:alpine
+    name: docker-compose
+    command: docker-compose up
+  - name: dependencies
+    init: npx lerna bootstrap
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: true
+    addComment: false
+    addBadge: true
+

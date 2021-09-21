@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/Cahllagerfeld/anno-1800-api/issues"
   },
-  "homepage": "https://github.com/Cahllagerfeld/anno-1800-api#readme"
+  "homepage": "https://github.com/Cahllagerfeld/anno-1800-api#readme",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": [
+    "packages/**"
+  ],
+  "private": true
 }

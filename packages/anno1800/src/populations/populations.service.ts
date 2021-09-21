@@ -7,7 +7,7 @@ export class PopulationsService {
   private populations: PopulationLevel[];
   constructor() {
     this.populations = data.populationLevels as PopulationLevel[];
-    console.log(this.populations.forEach((level) => console.log(level.name)));
+    console.log(this.populations.forEach((level) => console.log(level.guid)));
   }
 
   public getAll(): PopulationLevel[] {

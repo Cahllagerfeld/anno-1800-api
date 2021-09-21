@@ -2,7 +2,8 @@ POST   http://localhost:3000/v1/anno1800/operations/calculate
 Content-Type: application/json
 
 {
-"Shepherds":2
+  "15000000":2,
+  "15000001":32432
 }
 
 ###

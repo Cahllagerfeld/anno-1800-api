@@ -14,12 +14,13 @@ export class OperationsService {
   ) {}
 
   public calculateNeeds(populationAmounts: {
-    [name: string]: number;
+    [id: number]: number;
   }): TotalNeed[] {
     let totalNeeds: TotalNeed[] = [];
-    Object.keys(populationAmounts).forEach((name: string) => {
+    Object.keys(populationAmounts).forEach((id: string) => {
+      const numberid = +id;
       const populationLevel: PopulationLevel =
-        this.populationService.findByName(name);
+        this.populationService.findById(numberid);
       populationLevel.needs.forEach((need: Need) => {
         if (need.tpmin) {
           const existingNeed = totalNeeds.find(
@@ -29,13 +30,12 @@ export class OperationsService {
           if (existingNeed) {
             recalculatedNeed = {
               guid: need.guid,
-              tpmin: (existingNeed.tpmin +=
-                need.tpmin * populationAmounts[name]),
+              tpmin: (existingNeed.tpmin += need.tpmin * populationAmounts[id]),
             };
           } else {
             recalculatedNeed = {
               guid: need.guid,
-              tpmin: need.tpmin * populationAmounts[name],
+              tpmin: need.tpmin * populationAmounts[id],
             };
           }
           totalNeeds = [...totalNeeds, recalculatedNeed];

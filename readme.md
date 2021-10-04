@@ -17,3 +17,7 @@ The Api builds around Microservices which can are using using Redis.
 
 1. node.js
 2. docker
+
+## Todos
+
+1. Internationalization => multi-language-support

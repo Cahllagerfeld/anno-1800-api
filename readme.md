@@ -21,3 +21,4 @@ The Api builds around Microservices which can are using using Redis.
 ## Todos
 
 1. Internationalization => multi-language-support
+1. Add more (older) Versions of the game

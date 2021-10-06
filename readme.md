@@ -22,3 +22,5 @@ The Api builds around Microservices which can are using using Redis.
 
 1. Internationalization => multi-language-support
 1. Add more (older) Versions of the game
+1. get item-info
+1. additional utility functions
